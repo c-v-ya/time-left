@@ -16,7 +16,7 @@ export default function TaskItem({ task, editable }) {
   return (
     <ListGroup.Item
       key={task.number}
-      className="justify-content-between align-items-center"
+      className="justify-content-between align-items-start"
       style={{ display: "flex" }}
     >
       <div className="pr-2">

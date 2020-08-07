@@ -12,7 +12,7 @@ function Main() {
     <Container className="pt-4" style={{ minHeight: "100vh" }}>
       <TotalTime />
       <TaskList />
-      <Row className="pt-4">
+      <Row className="pt-4 pb-4">
         <Col className="text-right">
           <Link to="/about" title="About" className="text-info">
             <FontAwesomeIcon icon={faQuestionCircle} size="2x" />

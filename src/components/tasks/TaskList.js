@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useEffect, useCallback } from "react";
 import { connect } from "react-redux";
-import { Row, Col, ListGroup } from "react-bootstrap";
+import { Row, Col, ListGroup, Card } from "react-bootstrap";
 import TaskAdd from "./TaskAdd";
 import TaskItem from "./TaskItem";
 
@@ -38,26 +38,34 @@ function TaskList({ tasks }) {
         <Row>
           {tasks.some(hasTodayTasks) && (
             <Col sm={12} className="pb-4">
-              <h2>Today&apos;s tasks:</h2>
-              <ListGroup variant="flush">
-                {tasks.map((_task) => {
-                  if (hasTodayTasks(_task))
-                    return (
-                      <TaskItem task={_task} editable={true} key={_task.id} />
-                    );
-                })}
-              </ListGroup>
+              <Card>
+                <Card.Body>
+                  <Card.Title as="h2">Today&apos;s tasks</Card.Title>
+                </Card.Body>
+                <ListGroup variant="flush">
+                  {tasks.map((_task) => {
+                    if (hasTodayTasks(_task))
+                      return (
+                        <TaskItem task={_task} editable={true} key={_task.id} />
+                      );
+                  })}
+                </ListGroup>
+              </Card>
             </Col>
           )}
           {tasks.some(hasYesterdayTasks) && (
             <Col sm={12} className="pb-4">
-              <h2>Yesterday&apos;s tasks:</h2>
-              <ListGroup variant="flush">
-                {tasks.map((_task) => {
-                  if (hasYesterdayTasks(_task))
-                    return <TaskItem task={_task} key={_task.id} />;
-                })}
-              </ListGroup>
+              <Card>
+                <Card.Body>
+                  <Card.Title as="h2">Yesterday&apos;s tasks</Card.Title>
+                </Card.Body>
+                <ListGroup variant="flush">
+                  {tasks.map((_task) => {
+                    if (hasYesterdayTasks(_task))
+                      return <TaskItem task={_task} key={_task.id} />;
+                  })}
+                </ListGroup>
+              </Card>
             </Col>
           )}
         </Row>

@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const autoprefixer = require("autoprefixer");
 
 process.env.NODE_ENV = "production";
 
@@ -67,8 +68,19 @@ module.exports = {
           {
             loader: "postcss-loader",
             options: {
-              plugins: () => [require("cssnano")],
+              plugins: () => [require("cssnano"), autoprefixer],
               sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[hash]-[name].[ext]",
             },
           },
         ],

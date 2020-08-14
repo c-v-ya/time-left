@@ -1,0 +1,14 @@
+body {
+  background-image: url("../illustrations/Work-time-pana.svg");
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: bottom;
+  background-attachment: fixed;
+  background-color: #fdfdfd;
+  background-size: contain;
+}
+
+.blur {
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+}

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Col, Row, Form, FormGroup, Button } from "react-bootstrap";
+import { Col, Row, Form, FormGroup, Button, Card } from "react-bootstrap";
 import { validateHours, validateMinutes } from "../../utils/validators";
 import { addTask } from "../../redux/actions/task";
 
@@ -44,97 +44,103 @@ function TaskAdd({ addTask }) {
 
   return (
     <Col sm={12} lg={5}>
-      <Col>
-        <h3 className="text-center">Add task</h3>
-      </Col>
-      <Form onSubmit={handleAdd}>
-        <FormGroup as={Row}>
-          <Form.Label column sm="4" htmlFor="task-number">
-            Task number
-          </Form.Label>
-          <Col>
-            <Form.Control
-              id="task-number"
-              type="text"
-              name="number"
-              title="Task number"
-              value={task.number}
-              onChange={handleChange}
-            />
-          </Col>
-        </FormGroup>
-        <FormGroup as={Row}>
-          <Form.Label column sm="4" htmlFor="task-hours">
-            Task hours
-          </Form.Label>
-          <Col>
-            <Form.Control
-              id="task-hours"
-              type="number"
-              title="Task hours"
-              min="0"
-              max="24"
-              step="1"
-              name="hours"
-              value={task.hours}
-              onChange={handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              Hours must be in range 0 - 24!
-            </Form.Control.Feedback>
-          </Col>
-        </FormGroup>
-        <FormGroup as={Row}>
-          <Form.Label column sm="4" htmlFor="task-minutes">
-            Task minutes
-          </Form.Label>
-          <Col>
-            <Form.Control
-              id="task-minutes"
-              type="number"
-              title="Task minutes"
-              min="0"
-              max="60"
-              step="1"
-              name="minutes"
-              value={task.minutes}
-              onChange={handleChange}
-            />
-            <Form.Control.Feedback type="invalid">
-              Minutes must be in range 0 - 60!
-            </Form.Control.Feedback>
-          </Col>
-        </FormGroup>
-        <FormGroup as={Row}>
-          <Form.Label column sm="4" htmlFor="task-description">
-            Task description
-          </Form.Label>
-          <Col>
-            <Form.Control
-              as="textarea"
-              style={{ height: "10em" }}
-              id="task-description"
-              type="text"
-              title="Task description"
-              name="description"
-              value={task.description}
-              onChange={handleChange}
-            />
-          </Col>
-        </FormGroup>
-        <FormGroup as={Row}>
-          <Col sm={{ span: 6, offset: 3 }}>
-            <Button
-              type="sumbit"
-              variant="outline-success"
-              title="Add task"
-              block
-            >
-              +
-            </Button>
-          </Col>
-        </FormGroup>
-      </Form>
+      <Card>
+        <Card.Body>
+          <Card.Title as="h3" className="text-center">
+            Add task
+          </Card.Title>
+          <Form onSubmit={handleAdd}>
+            <Card.Text as="div">
+              <FormGroup as={Row}>
+                <Form.Label column sm="4" htmlFor="task-number">
+                  Task number
+                </Form.Label>
+                <Col>
+                  <Form.Control
+                    id="task-number"
+                    type="text"
+                    name="number"
+                    title="Task number"
+                    value={task.number}
+                    onChange={handleChange}
+                  />
+                </Col>
+              </FormGroup>
+              <FormGroup as={Row}>
+                <Form.Label column sm="4" htmlFor="task-hours">
+                  Task hours
+                </Form.Label>
+                <Col>
+                  <Form.Control
+                    id="task-hours"
+                    type="number"
+                    title="Task hours"
+                    min="0"
+                    max="24"
+                    step="1"
+                    name="hours"
+                    value={task.hours}
+                    onChange={handleChange}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Hours must be in range 0 - 24!
+                  </Form.Control.Feedback>
+                </Col>
+              </FormGroup>
+              <FormGroup as={Row}>
+                <Form.Label column sm="4" htmlFor="task-minutes">
+                  Task minutes
+                </Form.Label>
+                <Col>
+                  <Form.Control
+                    id="task-minutes"
+                    type="number"
+                    title="Task minutes"
+                    min="0"
+                    max="60"
+                    step="1"
+                    name="minutes"
+                    value={task.minutes}
+                    onChange={handleChange}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Minutes must be in range 0 - 60!
+                  </Form.Control.Feedback>
+                </Col>
+              </FormGroup>
+              <FormGroup as={Row}>
+                <Form.Label column sm="4" htmlFor="task-description">
+                  Task description
+                </Form.Label>
+                <Col>
+                  <Form.Control
+                    as="textarea"
+                    style={{ height: "10em" }}
+                    id="task-description"
+                    type="text"
+                    title="Task description"
+                    name="description"
+                    value={task.description}
+                    onChange={handleChange}
+                  />
+                </Col>
+              </FormGroup>
+            </Card.Text>
+            <FormGroup as={Row}>
+              <Col sm={{ span: 6, offset: 3 }}>
+                <Button
+                  type="sumbit"
+                  variant="outline-success"
+                  title="Add task"
+                  block
+                >
+                  +
+                </Button>
+              </Col>
+            </FormGroup>
+          </Form>
+        </Card.Body>
+      </Card>
     </Col>
   );
 }

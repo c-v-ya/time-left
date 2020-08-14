@@ -7,6 +7,8 @@ import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons";
 import TotalTime from "./time/TotalTime";
 import TaskList from "./tasks/TaskList";
 
+import "../../assets/css/main.css";
+
 function Main() {
   return (
     <Container className="pt-4" style={{ minHeight: "100vh" }}>

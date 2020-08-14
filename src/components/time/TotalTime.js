@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Row, Col, Form, FormControl, InputGroup } from "react-bootstrap";
 import PropTypes from "prop-types";
@@ -6,6 +6,8 @@ import { validateHours, validateMinutes } from "../../utils/validators";
 import { updateTotalTime } from "../../redux/actions/time";
 
 function TotalTime({ totalTime, updateTotalTime, tasks }) {
+  const [canEdit, setCanEdit] = useState(true);
+
   const time = JSON.parse(localStorage.getItem("time")) || {
     hours: 8,
     minutes: 0,
@@ -30,6 +32,8 @@ function TotalTime({ totalTime, updateTotalTime, tasks }) {
     if (minutes > time.minutes) {
       hours++;
     }
+
+    minutes > 0 || hours > 0 ? setCanEdit(false) : setCanEdit(true);
 
     updateTotalTime({
       hours: time.hours - hours,
@@ -84,6 +88,7 @@ function TotalTime({ totalTime, updateTotalTime, tasks }) {
                 step="1"
                 value={totalTime.hours}
                 onChange={editTotalHours}
+                disabled={!canEdit}
               />
               <InputGroup.Append>
                 <InputGroup.Text>h</InputGroup.Text>
@@ -101,6 +106,7 @@ function TotalTime({ totalTime, updateTotalTime, tasks }) {
                 step="1"
                 value={totalTime.minutes}
                 onChange={editTotalMinutes}
+                disabled={!canEdit}
               />
               <InputGroup.Append>
                 <InputGroup.Text>m</InputGroup.Text>

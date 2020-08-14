@@ -46,6 +46,7 @@ function TotalTime({ totalTime, updateTotalTime, tasks }) {
   }, [tasks]);
 
   const editTotalHours = (event) => {
+    if (!canEdit) return;
     event.persist();
     const hours = validateHours(event);
     updateTotalTime({ ...totalTime, hours: hours });
@@ -53,6 +54,7 @@ function TotalTime({ totalTime, updateTotalTime, tasks }) {
   };
 
   const editTotalMinutes = (event) => {
+    if (!canEdit) return;
     event.persist();
     const minutes = validateMinutes(event);
     updateTotalTime({ ...totalTime, minutes: minutes });

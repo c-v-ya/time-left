@@ -47,7 +47,9 @@ export default function About() {
                 </p>
                 <p>
                   The beautiful illustration in the background provided by{" "}
-                  <a href="https://stories.freepik.com/work">Freepik Stories</a>
+                  <a href="https://stories.freepik.com/work" target="blank">
+                    Freepik Stories
+                  </a>
                   .
                 </p>
                 <p>

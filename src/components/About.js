@@ -46,6 +46,11 @@ export default function About() {
                   about how I made this app if you&apos;d like to read more.
                 </p>
                 <p>
+                  The beautiful illustration in the background provided by{" "}
+                  <a href="https://stories.freepik.com/work">Freepik Stories</a>
+                  .
+                </p>
+                <p>
                   <Link to="/" title="Back to the app">
                     <FontAwesomeIcon icon={faChevronLeft} /> Back to the app
                   </Link>

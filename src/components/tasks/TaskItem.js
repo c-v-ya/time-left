@@ -38,6 +38,7 @@ export default function TaskItem({ task, editable }) {
 
   const taskDescription = (
     <span ref={tooltipTarget}>
+      {" "}
       &mdash;{" "}
       <span ref={descriptionRef} className="pr-2">
         {task.description}

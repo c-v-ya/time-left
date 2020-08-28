@@ -40,7 +40,7 @@ export default function TaskItem({ task, editable }) {
     <span ref={tooltipTarget}>
       {" "}
       &mdash;{" "}
-      <span ref={descriptionRef} className="pr-2">
+      <span ref={descriptionRef} className="pr-1">
         {task.description}
       </span>{" "}
       <FontAwesomeIcon

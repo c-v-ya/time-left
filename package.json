@@ -2,8 +2,8 @@
   "name": "time-left",
   "version": "1.0.0",
   "description": "Track time on daily tasks",
-  "engines" : {
-    "node" : "^20"
+  "engines": {
+    "node": "^20"
   },
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.dev.js --port 3000",
@@ -17,7 +17,7 @@
   "author": "Constantine",
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -35,11 +35,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
+    "@babel/eslint-parser": "^7.22.9",
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "autoprefixer": "^9.8.6",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-polyfill": "^6.26.0",
